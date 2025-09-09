@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sunit Portfolio - Web Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .scroll-smooth {
+            scroll-behavior: smooth;
+        }
+
+        /* Custom styles for uniqueness */
+        .hero-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .project-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .fade-in {
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .nav-link {
+            position: relative;
+            transition: color 0.3s;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 50%;
+            background-color: #764ba2;
+            transition: width 0.3s, left 0.3s;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+            left: 0;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 text-gray-900 scroll-smooth">
+    <!-- Header -->
+    <header class="bg-white shadow-lg sticky top-0 z-50">
+        <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-indigo-600 cursor-pointer" onclick="scrollToSection('hero')">sunit ovhal
+            </h1>
+            <ul class="hidden md:flex space-x-6">
+                <li><a href="#hero" class="nav-link py-2 text-gray-700 hover:text-indigo-600"
+                        onclick="scrollToSection('hero')">Home</a></li>
+                <li><a href="#about" class="nav-link py-2 text-gray-700 hover:text-indigo-600"
+                        onclick="scrollToSection('about')">About</a></li>
+                <li><a href="#skills" class="nav-link py-2 text-gray-700 hover:text-indigo-600"
+                        onclick="scrollToSection('skills')">Skills</a></li>
+                <li><a href="#projects" class="nav-link py-2 text-gray-700 hover:text-indigo-600"
+                        onclick="scrollToSection('projects')">Projects</a></li>
+                <li><a href="#contact" class="nav-link py-2 text-gray-700 hover:text-indigo-600"
+                        onclick="scrollToSection('contact')">Contact</a></li>
+            </ul>
+            <button class="md:hidden text-gray-700" id="menu-toggle"><i class="fas fa-bars"></i></button>
+        </nav>
+        <div id="mobile-menu" class="hidden bg-white md:hidden">
+            <ul class="px-4 py-2 space-y-2">
+                <li><a href="#hero" class="block py-2 text-gray-700 hover:text-indigo-600"
+                        onclick="scrollToSection('hero')">Home</a></li>
+                <li><a href="#about" class="block py-2 text-gray-700 hover:text-indigo-600"
+                        onclick="scrollToSection('about')">About</a></li>
+                <li><a href="#skills" class="block py-2 text-gray-700 hover:text-indigo-600"
+                        onclick="scrollToSection('skills')">Skills</a></li>
+                <li><a href="#projects" class="block py-2 text-gray-700 hover:text-indigo-600"
+                        onclick="scrollToSection('projects')">Projects</a></li>
+                <li><a href="#contact" class="block py-2 text-gray-700 hover:text-indigo-600"
+                        onclick="scrollToSection('contact')">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-bg text-white py-20">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 fade-in">
+                <h2 class="text-4xl md:text-6xl font-bold mb-4">Hello, I'm sunit</h2>
+                <p class="text-lg md:text-xl mb-6">A passionate web developer creating amazing digital experiences.</p>
+                <button
+                    class="bg-white text-indigo-600 font-bold py-3 px-6 rounded-full hover:bg-gray-200 transition duration-300"
+                    onclick="scrollToSection('projects')">View My Work</button>
+            </div>
+            <div class="md:w-1/2 mt-8 md:mt-0">
+                <img src="/7X2A8370.jpg"
+                    alt="A professional portrait of a web developer with glasses, smiling confidently in a modern office setting with computer screens in the background"
+                    class="rounded-full mx-auto shadow-lg" />
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-4 text-center">
+            <h3 class="text-3xl font-bold mb-8">About Me</h3>
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0">
+                    <img src="/clint-patterson-jNaoPtM2_aY-unsplash.jpg"
+                        alt="A scenic landscape with mountains and a lake, symbolizing inner peace and creativity"
+                        class="rounded-lg shadow-lg" />
+                </div>
+                <div class="md:w-1/2 md:pl-8 text-left">
+                    <p class="text-lg mb-4">I am a dedicated web developer with 2+ years of experience in building
+                        responsive and user-friendly websites. I specialize in front-end technologies like HTML, CSS,
+                        JavaScript, and frameworks such as React and bootstrap. .</p>
+                    <p class="text-lg">My goal is to turn ideas into reality through clean, efficient, and scalable
+                        code. Let's collaborate and build something amazing together!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h3 class="text-3xl font-bold text-center mb-12">Skills</h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="fade-in">
+                    <i class="fab fa-html5 text-6xl text-orange-500 mb-4"></i>
+                    <p class="text-lg font-semibold">HTML5 <br>95%</p>
+                </div>
+                <div class="fade-in">
+                    <i class="fab fa-css3-alt text-6xl text-blue-500 mb-4"></i>
+                    <p class="text-lg font-semibold">CSS3 <br>90%</p>
+                </div>
+                <div class="fade-in">
+                    <i class="fab fa-js text-6xl text-yellow-500 mb-4"></i>
+                    <p class="text-lg font-semibold">JavaScript <br>88%</p>
+                </div>
+                <div class="fade-in">
+                    <i class="fab fa-react text-6xl text-cyan-500 mb-4"></i>
+                    <p class="text-lg font-semibold">React <br>80%</p>
+                </div>
+                <!-- <div class="fade-in">
+                    <i class="fab fa-node text-6xl text-green-500 mb-4"></i>
+                    <p class="text-lg font-semibold">Node.js</p>
+                </div> -->
+                <!-- <div class="fade-in">
+                    <i class="fab fa-git text-6xl text-red-500 mb-4"></i>
+                    <p class="text-lg font-semibold">Git</p>
+                </div> -->
+                <!-- <div class="fade-in">
+                    <i class="fab fa-sass text-6xl text-pink-500 mb-4"></i>
+                    <p class="text-lg font-semibold">Sass</p>
+                </div> -->
+                <!-- <div class="fade-in">
+                    <i class="fab fa-angular text-6xl text-red-600 mb-4"></i>
+                    <p class="text-lg font-semibold">Angular</p>
+                </div> -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h3 class="text-3xl font-bold text-center mb-12">My Projects</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="project-card bg-gray-100 rounded-lg shadow-lg overflow-hidden">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/de9288d2-84c2-453e-9db5-47210fe3e654.png"
+                        alt="A screenshot of an e-commerce website with colorful products displayed on a clean interface"
+                        class="w-full h-48 object-cover" />
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold mb-2">E-Commerce Site</h4>
+                        <p class="text-gray-700 mb-4">A full-stack e-commerce platform built with MERN stack featuring
+                            user authentication, payment integration, and responsive design.</p>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-indigo-600 hover:underline">Live Demo</a>
+                            <a href="#" class="text-indigo-600 hover:underline">Code</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card bg-gray-100 rounded-lg shadow-lg overflow-hidden">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/b0a4ec79-3c8c-4402-b4c9-7b62a054a2fe.png"
+                        alt="A dashboard interface for a task management app with graphs and charts"
+                        class="w-full h-48 object-cover" />
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold mb-2">Task Manager App</h4>
+                        <p class="text-gray-700 mb-4">A productivity app for managing daily tasks with features like
+                            drag-and-drop, real-time updates, and data visualization.</p>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-indigo-600 hover:underline">Live Demo</a>
+                            <a href="#" class="text-indigo-600 hover:underline">Code</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card bg-gray-100 rounded-lg shadow-lg overflow-hidden">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/eea67461-18c4-4219-bb15-63901b54595a.png"
+                        alt="A portfolio website with sections for work and contact information"
+                        class="w-full h-48 object-cover" />
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold mb-2">Portfolio Website</h4>
+                        <p class="text-gray-700 mb-4">A responsive portfolio site showcasing various projects, built
+                            with modern CSS frameworks and JavaScript for interactive elements.</p>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-indigo-600 hover:underline">Live Demo</a>
+                            <a href="#" class="text-indigo-600 hover:underline">Code</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h3 class="text-3xl font-bold text-center mb-12">Contact Me</h3>
+            <div class="max-w-lg mx-auto bg-white rounded-lg shadow-lg p-8">
+                <form id="contactForm">
+                    <div class="mb-4">
+                        <label for="name" class="block text-gray-700 font-bold mb-2">Name</label>
+                        <input type="text" id="name"
+                            class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                            required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="email" class="block text-gray-700 font-bold mb-2">Email</label>
+                        <input type="email" id="email"
+                            class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                            required>
+                    </div>
+                    <div class="mb-6">
+                        <label for="message" class="block text-gray-700 font-bold mb-2">Message</label>
+                        <textarea id="message" rows="4"
+                            class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                            required></textarea>
+                    </div>
+                    <button type="submit"
+                        class="w-full bg-indigo-600 text-white font-bold py-3 px-4 rounded-lg hover:bg-indigo-700 transition duration-300">Send
+                        Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p>© 2025 sunit ovhal. All rights reserved.</p>
+            <div class="flex justify-center space-x-4 mt-4">
+                <a href="https://github.com/sunitovhal" class="text-white hover:text-indigo-400"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/sunit-ovhal-0415b3377/" class="text-white hover:text-indigo-400"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="text-white hover:text-indigo-400"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling function
+        function scrollToSection(id) {
+            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Mobile menu toggle
+        document.getElementById('menu-toggle').addEventListener('click', function () {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Form submission
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            alert('Thank you for your message! I will get back to you soon.');
+            this.reset();
+        });
+
+        // Fade-in animations on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+
+</html>
+</content>
+</create_file>
